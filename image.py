@@ -1,0 +1,17 @@
+from PIL import Image, ImageFilter
+img = Image.open('./Images/pikachu.jpg')
+astro_img = Image.open('./Images/astro.jpg ')
+
+img2 = Image.open('./Images/OIP.jpg')
+filtered_img = img.convert('1')
+filtered_img.save("static.png", 'png')
+resize = filtered_img.resize((1800,1800))
+box = (100,100,400,400)
+box2 = (200,200,400,400)
+astro_img.thumbnail((400,400))
+astro_img.save('thumbnail.jpg')
+crop2 = img2.crop(box)
+crop2.save("croppedKitten.png", 'png')
+crop = filtered_img.crop(box2)
+crop.save("cropped.png", 'png')
+#filtered_img.show()
